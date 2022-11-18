@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import facebookIcon from "../assets/images/facebook.svg";
@@ -6,18 +7,26 @@ import mailIcon from "../assets/images/mail.svg";
 
 const Home = () => {
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+  const [currentUrl, setCurrentUrl] = useState(null);
+  const currentPath = window.location.href;
+
+  useEffect(() => {
+    currentPath.includes('localhost') ?
+    setCurrentUrl("http://localhost:3000/auth0-react/") : setCurrentUrl("https://gyandx.github.io/auth0-react/");
+  }, [])
+  
 
   const googleLoginHandler = () => {
     loginWithRedirect({
       connection: "google-oauth2",
-      redirectUri: "http://localhost:3000",
+      redirectUri: currentUrl,
     });
   };
 
   const fbLoginHandler = () => {
     loginWithRedirect({
       connection: "facebook",
-      redirectUri: "http://localhost:3000",
+      redirectUri: currentUrl,
     });
   };
 
@@ -51,7 +60,7 @@ const Home = () => {
               className="icon-img-container mail"
               onClick={() =>
                 loginWithRedirect({
-                  redirectUri: "http://localhost:3000",
+                  redirectUri: {currentUrl},
                 })
               }
             >

@@ -11,9 +11,9 @@ import crossIcon from "../assets/images/close.svg";
 const Profile = () => {
   const { user } = useAuth0();
   const [loginIcon, setLoginIcon] = useState(null);
-  console.log(user);
 
   useEffect(() => {
+    console.log('profile', user?.sub);
     if (user?.sub.includes("google-ouath2")) {
       setLoginIcon(googleIcon);
     } else if (user?.sub.includes("facebook")) {

@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 
 import icon from "../assets/images/snow.svg";
 import userIcon from "../assets/images/user.svg";
@@ -9,6 +10,7 @@ import profileIcon from "../assets/images/profile.svg";
 import logoutIcon from "../assets/images/logout.svg";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const { user, isAuthenticated, logout } = useAuth0();
   return (
@@ -39,7 +41,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="user-menu-item">
-                    <a className="user-menu-link" href="/profile">
+                    <a className="user-menu-link" onClick={() => (navigate("/profile"))}>
                       <span>Profile</span>
                       <img
                         src={profileIcon}
@@ -49,7 +51,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="user-menu-item">
-                    <a className="user-menu-link" href="#" onClick={() => logout(window.location.origin)}>
+                    <a className="user-menu-link" href="#" onClick={() => logout(navigate("https://gyandx.github.io/auth0-react/"))}>
                       <span>Logout</span>
                       <img
                         src={logoutIcon}
