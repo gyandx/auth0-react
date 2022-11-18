@@ -51,7 +51,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="user-menu-item">
-                    <a className="user-menu-link" onClick={() => logout({returnTo: window.location.origin})}>
+                    <a className="user-menu-link" onClick={() => logout({returnTo: window.location.origin + '/auth0-react'})}>
                       <span>Logout</span>
                       <img
                         src={logoutIcon}
