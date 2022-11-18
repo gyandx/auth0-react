@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/auth0-react/static/css/main.8f492cd7.css",
-    "main.js": "/auth0-react/static/js/main.f304e9b0.js",
+    "main.css": "/auth0-react/static/css/main.dee9b54b.css",
+    "main.js": "/auth0-react/static/js/main.30a893bb.js",
     "static/media/snow.svg": "/auth0-react/static/media/snow.cca7bda1244c452e8e572b608381861d.svg",
     "index.html": "/auth0-react/index.html",
     "static/media/google.svg": "/auth0-react/static/media/google.330a2dc7f18d7502647dc5d6f93812ec.svg",
@@ -12,11 +12,11 @@
     "static/media/user.svg": "/auth0-react/static/media/user.04a1b9788ebf3347575f73fa51fa4b5c.svg",
     "static/media/close.svg": "/auth0-react/static/media/close.cc0e38ee15fc99fce9888d0f6b526f75.svg",
     "static/media/checkmark.svg": "/auth0-react/static/media/checkmark.f6db42cad773fc3b0775e63a3971b759.svg",
-    "main.8f492cd7.css.map": "/auth0-react/static/css/main.8f492cd7.css.map",
-    "main.f304e9b0.js.map": "/auth0-react/static/js/main.f304e9b0.js.map"
+    "main.dee9b54b.css.map": "/auth0-react/static/css/main.dee9b54b.css.map",
+    "main.30a893bb.js.map": "/auth0-react/static/js/main.30a893bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f492cd7.css",
-    "static/js/main.f304e9b0.js"
+    "static/css/main.dee9b54b.css",
+    "static/js/main.30a893bb.js"
   ]
 }
