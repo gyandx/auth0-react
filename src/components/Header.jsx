@@ -51,7 +51,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="user-menu-item">
-                    <a className="user-menu-link" href="#" onClick={() => logout(navigate("https://gyandx.github.io/auth0-react/"))}>
+                    <a className="user-menu-link" onClick={() => logout({returnTo: window.location.origin})}>
                       <span>Logout</span>
                       <img
                         src={logoutIcon}
