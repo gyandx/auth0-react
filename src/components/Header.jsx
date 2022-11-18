@@ -11,7 +11,6 @@ import logoutIcon from "../assets/images/logout.svg";
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { user, isAuthenticated, logout } = useAuth0();
-  console.log(isAuthenticated, user);
   return (
     <header>
       <nav className="nav-container container">

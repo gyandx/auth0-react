@@ -6,12 +6,13 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Auth0Provider
-        domain="dev-vkoxek6vhstdgrtj.us.auth0.com"
-        clientId="ftH1oR48ucIeDaEK4uFrZTjfrwDZSXVA"
+        domain={process.env.REACT_APP_AUTH0_DOMAIN}
+        clientId={process.env.REACT_APP_AUTH0_CLIENTID}
         redirectUri={window.location.origin}
       >
         <App />
