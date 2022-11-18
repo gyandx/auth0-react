@@ -13,6 +13,13 @@ const Header = () => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const { user, isAuthenticated, logout } = useAuth0();
+  const menuVisibleHandler = (navText) => {
+    setIsVisible(!isVisible);
+    console.log(navText)
+    if (navText === 'profile') {
+      navigate('/profile');
+    }
+  }
   return (
     <header>
       <nav className="nav-container container">
@@ -26,7 +33,7 @@ const Header = () => {
               <img
                 src={user.picture}
                 alt="user"
-                onClick={() => setIsVisible(!isVisible)}
+                onClick={menuVisibleHandler}
               />
             ) : null}
           </div>
@@ -35,13 +42,13 @@ const Header = () => {
               <ul className={`user-menu ${isVisible ? "active" : ""}`}>
                 <div className="footer">
                   <li className="user-menu-item">
-                    <a className="user-menu-link" href="#">
+                    <a className="user-menu-link" onClick={menuVisibleHandler}>
                       <span>{user.given_name || user.name.split("@")[0]}</span>
                       <img src={userIcon} className="icons" alt="user-icon" />
                     </a>
                   </li>
                   <li className="user-menu-item">
-                    <a className="user-menu-link" onClick={() => (navigate("/profile"))}>
+                    <a className="user-menu-link" onClick={() => menuVisibleHandler('profile')}>
                       <span>Profile</span>
                       <img
                         src={profileIcon}

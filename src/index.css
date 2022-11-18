@@ -103,6 +103,7 @@ header {
   gap: 0.5rem;
   justify-content: flex-end;
   color: #63e6be;
+  cursor: pointer;
 }
 
 .icons {
